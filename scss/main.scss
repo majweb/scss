@@ -1,0 +1,207 @@
+@import "config/variables";
+@import "includes/bootstrap";
+@import "config/mixins";
+@import "config/global";
+@import "config/customBootstrap";
+@import url("https://fonts.googleapis.com/css?family=Roboto:100,300&display=swap&subset=latin-ext");
+@import url("https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+
+.first-row {
+  &__first-left {
+    background-color: $red;
+    height: 100px;
+  }
+
+  &__second-column {
+    position: relative;
+    height: 100px;
+  }
+
+  &__first-right-inner {
+    text-align: center;
+    font-weight: 100;
+    margin-top: 30px;
+
+    @media screen and(min-width:992px) {
+      width: 95%;
+      margin-top: 0;
+      position: absolute;
+      top: 50%;
+      left: 30px;
+      transform: translateY(-50%);
+      text-align: initial;
+      font-weight: 100;
+    }
+  }
+}
+
+.second-row {
+  min-height: 700px;
+  display: table;
+  width: 100%;
+  &__first-head {
+    font-size: 50px;
+    font-weight: 100;
+    position: relative;
+    margin: 20px 0;
+    z-index: 0;
+    text-align: center;
+
+    &::before {
+      content: "faq";
+      display: block;
+      font-size: 160px;
+      font-weight: bold;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #eeeeee;
+      z-index: -1;
+      text-align: center;
+      margin: 0;
+    }
+
+    @media screen and(min-width:992px) {
+      margin-top: 125px;
+      text-align: initial;
+      padding-left: 65px;
+
+      &::before {
+        left: -10px;
+        position: absolute;
+        left: -10px;
+        bottom: -12px;
+        color: #eeeeee;
+        z-index: -1;
+      }
+    }
+  }
+
+  &__first-column {
+    background-color: $white;
+    height: 100%;
+    display: block;
+    width: 100%;
+    @media screen and(min-width:992px) {
+      width: 60%;
+      display: table-cell;
+    }
+  }
+
+  &__second-column {
+    width: 100%;
+    background-color: $black;
+    border-radius: 20px;
+    position: relative;
+    display: block;
+    // margin-bottom: 20px;
+
+    @media screen and(min-width:992px) {
+      display: table-cell;
+      vertical-align: top;
+      width: 40%;
+      border-radius: 0;
+      border-top-left-radius: 20px;
+    }
+
+    &::after {
+      @media screen and(min-width:992px) {
+        content: "";
+        background-color: #000;
+        position: absolute;
+        width: 105%;
+        height: 100%;
+        right: -100%;
+        top: 0;
+        z-index: -1;
+      }
+    }
+  }
+
+  &__files-text {
+    padding: 41px 0 35px 29px;
+    color: $white;
+    line-height: 40px;
+  }
+
+  &__files-head {
+    font-size: 41px;
+    font-weight: 300;
+  }
+
+  &__files-subhead {
+    display: block;
+    font-size: 41px;
+    font-weight: 100;
+  }
+
+  &__files-list {
+    list-style: none;
+    margin: 0;
+    padding-left: 29px;
+    width: 90%;
+    padding-bottom: 60px;
+    min-height: 500px;
+    @media screen and(min-width:992px) {
+      width: 100%;
+    }
+  }
+
+  &__files-item {
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 40px;
+    color: $white;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      background-color: $white;
+      width: 100%;
+      height: 1px;
+      opacity: 0.2;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      right: 0;
+      bottom: 8px;
+      background: url("../images/icons/file.png") no-repeat center/contain;
+      width: 20px;
+      height: 24px;
+      transition: 0.2s;
+    }
+
+    &:hover::before {
+      cursor: pointer;
+      background: url("../images/icons/file-hover.png") no-repeat center/contain;
+    }
+  }
+
+  &__files-link {
+    display: block;
+    text-decoration: none;
+    color: $white;
+
+    &:hover {
+      text-decoration: none;
+      color: $white;
+    }
+
+    &:focus {
+      text-decoration: none;
+      color: $white;
+    }
+  }
+}
+
+.third-row {
+  background-color: $gray-main;
+  width: 100%;
+  min-height: 376px;
+  position: relative;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}

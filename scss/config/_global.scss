@@ -1,0 +1,22 @@
+html {
+  font-size: 10px;
+}
+
+body {
+  background: $white;
+  font-family: $font;
+  font-weight: 300;
+  color: $font-color;
+  @media screen and(min-width:992px) {
+    overflow-x: hidden;
+  }
+}
+
+.page {
+  height: 100%;
+  position: relative;
+}
+
+.content-right {
+  background-color: $black;
+}
